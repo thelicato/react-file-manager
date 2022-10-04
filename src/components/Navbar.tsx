@@ -3,12 +3,22 @@ import { useFileManager } from '../context';
 import {  FileType } from '../types';
 
 const Navbar = () => {
-    const {fs, setCurrentFolder} = useFileManager();
-
+    const {fs, setCurrentFolder, onRefresh} = useFileManager();
 
     const initialFolders = useMemo(() => {
         return fs.filter((f: FileType) => f.isDir && f.parentId === '0');
     }, [fs])
+
+    const handleClick = async (id: string) => {
+        setCurrentFolder(id);
+        if (onRefresh !== undefined) {
+            try {
+                await onRefresh(id);
+            } catch (e) {
+                throw new Error("Error during refresh")
+            }
+        }
+    }
 
     return (
         <section className="rfm-navbar">
@@ -22,7 +32,7 @@ const Navbar = () => {
                 {initialFolders.map((f: FileType) => {
                     return (
                         <li 
-                        onClick={() => setCurrentFolder(f.id)}
+                        onClick={() => handleClick(f.id)}
                         className="rfm-navbar-list-element" key={f.id}>
                             {f.name}
                         </li>
