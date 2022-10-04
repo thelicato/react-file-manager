@@ -1,0 +1,15 @@
+#root {
+    width: 60%;
+    margin: auto;
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    border: 2px solid #efefef;
+    border-radius: 20px;
+    overflow: hidden;
+}
