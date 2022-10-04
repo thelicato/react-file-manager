@@ -248,4 +248,8 @@ React File Manager | MIT License | https://github.com/thelicato/react-file-manag
     }
 
     /* FileManager */
+    .rfm-main-container {
+        @apply flex;
+        @apply box-border;
+    }
 }

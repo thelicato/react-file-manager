@@ -33,7 +33,7 @@ export const ReactFileManager = ({fs, onRefresh, onUpload, onCreateFolder, onDel
             uploadedFileData: uploadedFileData,
             setUploadedFileData: setUploadedFileData
         }}>
-            <div className="flex box-border	">
+            <div className="rfm-main-container">
                 <Navbar />
                 <Workspace />
             </div>

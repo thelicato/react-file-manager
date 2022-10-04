@@ -18,7 +18,6 @@ const FileIcon = (props: IFileIcon) => {
             setCurrentFolder(props.id);
             if (onRefresh !== undefined) {
                 try {
-                    console.log(props.id)
                     await onRefresh(props.id);
                 } catch (e) {
                     throw new Error("Error during refresh")

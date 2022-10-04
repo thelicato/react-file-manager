@@ -45,13 +45,15 @@ const Workspace = () => {
 
     return (
         <section 
-        id="react-file-manager-workspace" className={`rfm-workspace ${isDragAccept ? "rfm-workspace-dropzone" : ""}`}>
+        id="react-file-manager-workspace" 
+        className={`rfm-workspace ${isDragAccept ? "rfm-workspace-dropzone" : ""}`}
+        {...getRootProps()}>
             
             {/* Top bar with folder path */}
             <FolderPath />
 
             {/* File listing */}
-            <div className="rfm-workspace-file-listing" {...getRootProps()}>
+            <div className="rfm-workspace-file-listing">
                 {currentFolderFiles.map((f: FileType, key: number) => {
                     return (
                         <FileIcon id={f.id} name={f.name} isDir={f.isDir} key={key}/>
