@@ -5,6 +5,7 @@ interface ProviderInterface {
     fs: FileSystemType,
     currentFolder: string,
     setCurrentFolder: (id: string) => void,
+    viewOnly?: boolean,
     onRefresh?: (id: string) => Promise<void>,
     onUpload?: (fileData: any, folderId: string) => Promise<void>,
     onCreateFolder?: (folderName: string) => Promise<void>,
