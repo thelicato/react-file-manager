@@ -1,0 +1,52 @@
+import React, { useState } from "react";
+// Context
+import { FileManagerContext } from "./context";
+// Components
+import { Navbar, Workspace } from "./components";
+// Types
+import type { FileSystemType } from "./types";
+// Styles
+import "./tailwind.css";
+
+export interface IFileManagerProps {
+  fs: FileSystemType;
+  viewOnly?: boolean;
+  onRefresh?: (id: string) => Promise<void>;
+  onUpload?: (fileData: any, folderId: string) => Promise<void>;
+  onCreateFolder?: (folderName: string) => Promise<void>;
+  onDelete?: (fileId: string) => Promise<void>;
+}
+
+export const ReactFileManager = ({
+  fs,
+  viewOnly,
+  onRefresh,
+  onUpload,
+  onCreateFolder,
+  onDelete,
+}: IFileManagerProps) => {
+  const [currentFolder, setCurrentFolder] = useState<string>("0"); // Root folder ID must be "0"
+  const [uploadedFileData, setUploadedFileData] = useState<any>();
+
+  return (
+    <FileManagerContext.Provider
+      value={{
+        fs: fs,
+        viewOnly: viewOnly,
+        currentFolder: currentFolder,
+        setCurrentFolder: setCurrentFolder,
+        onRefresh: onRefresh,
+        onUpload: onUpload,
+        onCreateFolder: onCreateFolder,
+        onDelete: onDelete,
+        uploadedFileData: uploadedFileData,
+        setUploadedFileData: setUploadedFileData,
+      }}
+    >
+      <div className="rfm-main-container">
+        <Navbar />
+        <Workspace />
+      </div>
+    </FileManagerContext.Provider>
+  );
+};
