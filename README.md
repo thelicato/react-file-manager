@@ -7,6 +7,7 @@
 <p>
 
 <p align="center">
+    <img src="https://github.com/thelicato/react-file-manager/actions/workflows/main.yaml/badge.svg"/>
     <img src="https://github.com/thelicato/react-file-manager/actions/workflows/release.yaml/badge.svg"/>
     <img src="https://github.com/thelicato/react-file-manager/actions/workflows/publish.yaml/badge.svg"/>
     <a href="https://www.npmjs.com/package/@thelicato/react-file-manager"><img src="https://img.shields.io/npm/v/@thelicato/react-file-manager"></a>
