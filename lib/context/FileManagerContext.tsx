@@ -7,6 +7,7 @@ interface ProviderInterface {
   currentFolder: string;
   setCurrentFolder: (id: string) => void;
   viewOnly?: boolean;
+  onDoubleClick?: (id: string) => Promise<void>;
   onRefresh?: (id: string) => Promise<void>;
   onUpload?: (fileData: any, folderId: string) => Promise<void>;
   onCreateFolder?: (folderName: string) => Promise<void>;

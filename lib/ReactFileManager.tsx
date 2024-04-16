@@ -11,6 +11,7 @@ import "./tailwind.css";
 export interface IFileManagerProps {
   fs: FileSystemType;
   viewOnly?: boolean;
+  onDoubleClick?: (id: string) => Promise<void>;
   onRefresh?: (id: string) => Promise<void>;
   onUpload?: (fileData: any, folderId: string) => Promise<void>;
   onCreateFolder?: (folderName: string) => Promise<void>;
@@ -20,6 +21,7 @@ export interface IFileManagerProps {
 export const ReactFileManager = ({
   fs,
   viewOnly,
+  onDoubleClick,
   onRefresh,
   onUpload,
   onCreateFolder,
@@ -35,6 +37,7 @@ export const ReactFileManager = ({
         viewOnly: viewOnly,
         currentFolder: currentFolder,
         setCurrentFolder: setCurrentFolder,
+        onDoubleClick: onDoubleClick,
         onRefresh: onRefresh,
         onUpload: onUpload,
         onCreateFolder: onCreateFolder,
