@@ -5,8 +5,6 @@ import { FileManagerContext } from "./context";
 import { Navbar, Workspace } from "./components";
 // Types
 import type { FileSystemType } from "./types";
-// Styles
-import "./tailwind.css";
 
 export interface IFileManagerProps {
   fs: FileSystemType;

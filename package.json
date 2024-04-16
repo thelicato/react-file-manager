@@ -1,7 +1,7 @@
 {
   "name": "@thelicato/react-file-manager",
   "description": "A simple React component to build a Web File Manager",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "license": "MIT",
   "type": "module",
   "main": "dist/index.cjs",
@@ -14,6 +14,7 @@
     "dev": "vite",
     "build": "run-s build:*",
     "build:lib": "tsup lib/index.ts --dts",
+    "build:css": "tailwindcss build -i lib/tailwind.css -o dist/style.css",
     "test": "vitest run",
     "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
     "format": "prettier --write .",
