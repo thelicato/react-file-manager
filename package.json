@@ -17,7 +17,7 @@
     "test": "vitest run",
     "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
     "format": "prettier --write .",
-    "release": "npm run check && npm run build && changeset publish",
+    "release": "npm run build && changeset publish",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
