@@ -26,3 +26,13 @@ export const ViewOnly: Story = {
     viewOnly: true,
   },
 };
+
+export const DoubleClickAlert: Story = {
+  args: {
+    fs: dummyFileSystem,
+    viewOnly: true,
+    onDoubleClick: async (id: string) => {
+        alert(`Hello ${id}!`)
+    },
+  },
+};

@@ -11,7 +11,7 @@ import NewFolderModal from "./NewFolderModal";
 import UploadFileModal from "./UploadFileModal";
 
 const Workspace = () => {
-  const { currentFolder, fs, viewOnly, setUploadedFileData } = useFileManager();
+  const { currentFolder, fs, viewOnly, setUploadedFileData, onDoubleClick } = useFileManager();
   const [newFolderModalVisible, setNewFolderModalVisible] =
     useState<boolean>(false);
   const [uploadFileModalVisible, setUploadFileModalVisible] =
@@ -60,6 +60,12 @@ const Workspace = () => {
     return files;
   }, [fs, currentFolder]);
 
+  const handleDoubleClick = (id: string) => {
+    if (onDoubleClick) {
+      onDoubleClick(id)
+    }
+  }
+
   return (
     <section
       id="react-file-manager-workspace"
@@ -74,8 +80,10 @@ const Workspace = () => {
       {/* File listing */}
       <div className="rfm-workspace-file-listing">
         {currentFolderFiles.map((f: FileType, key: number) => {
-          return <FileIcon id={f.id} name={f.name} isDir={f.isDir} key={key} />;
-        })}
+          return <button onDoubleClick={() => handleDoubleClick(f.id)} key={key}>
+            <FileIcon id={f.id} name={f.name} isDir={f.isDir}/>
+            </button>;
+        })}        
 
         {!viewOnly && (
           <>
