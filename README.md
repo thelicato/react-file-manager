@@ -1,15 +1,15 @@
 <h1 align="center">
   <br>
-    <img src="https://raw.githubusercontent.com/thelicato/react-file-manager/main/docs/rfm.png" alt= "react-file-manager" width="200px">
+    <img src="https://raw.githubusercontent.com/thelicato/react-file-manager/main/docs/rfm.png" alt= "react-file-manager" width="400px">
 </h1>
 <p align="center">
     <b>React File Manager</b>
 <p>
 
 <p align="center">
-    <img src="https://github.com/thelicato/react-file-manager/actions/workflows/main.yaml/badge.svg"/>
-    <img src="https://github.com/thelicato/react-file-manager/actions/workflows/release.yaml/badge.svg"/>
-    <img src="https://github.com/thelicato/react-file-manager/actions/workflows/publish.yaml/badge.svg"/>
+    <img src="https://github.com/thelicato/react-file-manager/actions/workflows/main.yml/badge.svg"/>
+    <img src="https://github.com/thelicato/react-file-manager/actions/workflows/release.yml/badge.svg"/>
+    <img src="https://github.com/thelicato/react-file-manager/actions/workflows/publish.yml/badge.svg"/>
     <a href="https://www.npmjs.com/package/@thelicato/react-file-manager"><img src="https://img.shields.io/npm/v/@thelicato/react-file-manager"></a>
     <a href="https://github.com/thelicato/react-file-manager/blob/main/README.md"><img src="https://img.shields.io/badge/Documentation-complete-green.svg?style=flat"></a>
     <a href="https://github.com/thelicato/react-file-manager/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-GPL3-blue.svg"></a>
