@@ -19,3 +19,10 @@ export const Base: Story = {
     fs: dummyFileSystem,
   },
 };
+
+export const ViewOnly: Story = {
+  args: {
+    fs: dummyFileSystem,
+    viewOnly: true,
+  },
+};
