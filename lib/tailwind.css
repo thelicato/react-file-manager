@@ -100,6 +100,7 @@ React File Manager | MIT License | https://github.com/thelicato/react-file-manag
   /* Navbar */
   .rfm-navbar {
     @apply bg-gray-200;
+    @apply dark:bg-gray-900;
     @apply w-1/6;
     @apply py-4;
     @apply select-none;
@@ -108,6 +109,7 @@ React File Manager | MIT License | https://github.com/thelicato/react-file-manag
     @apply uppercase;
     @apply text-lg;
     @apply text-gray-500;
+    @apply dark:text-gray-300;
     @apply transition-colors;
     @apply duration-200;
     @apply hover:text-gray-700;
@@ -121,6 +123,7 @@ React File Manager | MIT License | https://github.com/thelicato/react-file-manag
   }
   .rfm-navbar-list-element {
     @apply text-gray-700;
+    @apply dark:text-slate-100;
     @apply w-full;
     @apply transition-colors;
     @apply duration-200;
