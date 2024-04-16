@@ -1,7 +1,7 @@
 {
   "name": "@thelicato/react-file-manager",
   "description": "A simple React component to build a Web File Manager",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "license": "MIT",
   "type": "module",
   "main": "dist/index.cjs",
