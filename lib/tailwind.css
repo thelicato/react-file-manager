@@ -27,6 +27,7 @@ React File Manager | MIT License | https://github.com/thelicato/react-file-manag
   .rfm-modal-title {
     @apply text-xl;
     @apply font-semibold;
+    @apply text-slate-900;
   }
   .rfm-modal-icon {
     @apply absolute;
@@ -55,6 +56,7 @@ React File Manager | MIT License | https://github.com/thelicato/react-file-manag
     @apply active:bg-sky-300;
     @apply p-2;
     @apply rounded-lg;
+    @apply dark:hover:bg-gray-600;
   }
   .rfm-file-icon-svg {
     @apply w-24;
@@ -83,13 +85,13 @@ React File Manager | MIT License | https://github.com/thelicato/react-file-manag
     @apply justify-between;
   }
   .rfm-header-container {
-    @apply flex justify-center items-center gap-2 rounded-lg bg-gray-200;
+    @apply flex justify-center items-center gap-2 rounded-lg bg-gray-200 dark:bg-gray-600;
   }
   .rfm-header-icon {
     @apply w-6 h-6 transition-all duration-200 cursor-pointer;
   }
   .rfm-header-icon--selected {
-    @apply bg-slate-700 text-white rounded-lg;
+    @apply bg-slate-700 dark:bg-sky-500 text-white rounded-lg;
   }
   .rfm-workspace-list-align-txt {
     @apply text-left last:text-right pr-2;
@@ -105,7 +107,7 @@ React File Manager | MIT License | https://github.com/thelicato/react-file-manag
   }
 
   .rfm-workspace-list-icon-row {
-    @apply cursor-pointer hover:bg-gray-100 active:bg-gray-200 transition-all duration-200;
+    @apply cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600 active:bg-gray-200 transition-all duration-200;
   }
   .rfm-workspace-list-icon-td {
     @apply flex gap-1 py-2;
@@ -161,7 +163,7 @@ React File Manager | MIT License | https://github.com/thelicato/react-file-manag
   }
   .rfm-navbar-list-element {
     @apply text-gray-700;
-    @apply dark:text-slate-100;
+    @apply dark:text-slate-100 dark:hover:bg-gray-700;
     @apply w-full;
     @apply transition-colors;
     @apply duration-200;
@@ -278,6 +280,7 @@ React File Manager | MIT License | https://github.com/thelicato/react-file-manag
     @apply p-4;
     @apply transition-colors;
     @apply duration-200;
+    @apply dark:bg-gray-800 dark:text-slate-100;
   }
   .rfm-workspace-dropzone {
     @apply bg-sky-100;

@@ -3,8 +3,24 @@
   margin: auto;
   margin-top: 24px;
   display: flex;
+  flex-direction: column;
+  gap: 1em;
   justify-content: center;
   align-items: center;
+}
+
+.switch-mode-btn {
+  color: white;
+  padding: 0.5rem;
+  background-color: rgb(14 165 233);
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transition-duration: 200ms;
+  border-radius: 0.5rem;
+}
+.switch-mode-btn:hover {
+  background-color: rgb(3 105 161);
 }
 
 .container {
