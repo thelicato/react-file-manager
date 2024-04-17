@@ -147,9 +147,11 @@ const Workspace = () => {
               {table.getHeaderGroups().map(headerGroup => (
                 <tr key={headerGroup.id}>
                   {headerGroup.headers.map(header => (
-                    <th className="rfm-workspace-list-align-txt" key={header.id} onClick={header.column.getToggleSortingHandler()}>
-                      {flexRender(header.column.columnDef.header, header.getContext())}
-                      {header.column.getIsSorted() ? (header.column.getIsSorted() === 'desc' ? ' 🔽' : ' 🔼') : ''}
+                    <th className="rfm-workspace-list-th" key={header.id} onClick={header.column.getToggleSortingHandler()}>
+                      <div className="rfm-workspace-list-th-content">
+                        {flexRender(header.column.columnDef.header, header.getContext())}
+                        {header.column.getIsSorted() ? (header.column.getIsSorted() === 'desc' ? <SvgIcon svgType="arrow-down" className="rfm-header-sort-icon" /> : <SvgIcon svgType="arrow-up" className="rfm-header-sort-icon" />) : ''}
+                      </div>
                     </th>
                   ))}
                 </tr>
