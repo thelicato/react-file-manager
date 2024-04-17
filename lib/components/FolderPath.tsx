@@ -3,11 +3,12 @@ import React, { useMemo } from "react";
 import { useFileManager } from "../context";
 // Types
 import type { FileType } from "../types";
+import { ViewStyle } from "../types";
 // Components
 import SvgIcon from "./SvgIcon";
 
 const FolderPath = () => {
-  const { fs, currentFolder, setCurrentFolder } = useFileManager();
+  const { fs, currentFolder, setCurrentFolder, viewStyle, setViewStyle } = useFileManager();
 
   const goUp = () => {
     const currentFolderInfo = fs.find((f: FileType) => f.id === currentFolder);
@@ -39,16 +40,30 @@ const FolderPath = () => {
   }, [fs, currentFolder]);
 
   return (
-    <div className="rfm-folder-path-container">
-      <SvgIcon
-        svgType="arrow-up"
-        onClick={goUp}
-        className="rfm-folder-path-svg"
-      />
-      <span className="rfm-folder-path-span">
-        {parentPath}
-        <b>{currentPath}</b>
-      </span>
+    <div className="rfm-workspace-header">
+      <div className="rfm-folder-path-container">
+        <SvgIcon
+          svgType="arrow-up"
+          onClick={goUp}
+          className="rfm-folder-path-svg"
+        />
+        <span className="rfm-folder-path-span">
+          {parentPath}
+          <b>{currentPath}</b>
+        </span>
+      </div>
+      <div className="rfm-header-container">
+        <SvgIcon
+          svgType="list"
+          className={`rfm-header-icon ${viewStyle === ViewStyle.List && "rfm-header-icon--selected"}`}
+          onClick={() => setViewStyle(ViewStyle.List)}
+        />
+        <SvgIcon
+          svgType="icons"
+          className={`rfm-header-icon ${viewStyle === ViewStyle.Icons && "rfm-header-icon--selected"}`}
+          onClick={() => setViewStyle(ViewStyle.Icons)}
+        />
+      </div>
     </div>
   );
 };

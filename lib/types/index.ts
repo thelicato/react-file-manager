@@ -1,2 +1,2 @@
-export type { FileType } from "./FileType";
-export type { FileSystemType } from "./FileSystemType";
+export type { FileType, FileSystemType } from "./Types";
+export { ViewStyle } from './Enums';

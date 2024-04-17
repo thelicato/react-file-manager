@@ -74,12 +74,50 @@ React File Manager | MIT License | https://github.com/thelicato/react-file-manag
     @apply select-none;
   }
 
-  /* FolderPath */
-  .rfm-folder-path-container {
+  /* Content header */
+  .rfm-workspace-header {
     @apply w-full;
     @apply h-6;
     @apply flex;
     @apply gap-4;
+    @apply justify-between;
+  }
+  .rfm-header-container {
+    @apply flex justify-center items-center gap-2 rounded-lg bg-gray-200;
+  }
+  .rfm-header-icon {
+    @apply w-6 h-6 transition-all duration-200 cursor-pointer;
+  }
+  .rfm-header-icon--selected {
+    @apply bg-slate-700 text-white rounded-lg;
+  }
+  .rfm-workspace-list-align-txt {
+    @apply text-left last:text-right pr-2;
+  }
+  .rfm-workspace-list-th {
+    @apply rfm-workspace-list-align-txt last:justify-end last:flex;
+  }
+  .rfm-workspace-list-th-content {
+    @apply flex;
+  }
+  .rfm-header-sort-icon {
+    @apply w-6 h-6;
+  }
+
+  .rfm-workspace-list-icon-row {
+    @apply cursor-pointer hover:bg-gray-100 active:bg-gray-200 transition-all duration-200;
+  }
+  .rfm-workspace-list-icon-td {
+    @apply flex gap-1 py-2;
+  }
+  .rfm-workspace-list-icon {
+    @apply w-6 h-6;
+  }
+  .rfm-workspace-list-add-folder {
+    @apply w-full p-2 text-slate-100 rounded-lg bg-sky-500 hover:bg-sky-700 transition-all duration-200 cursor-pointer;
+  }
+  .rfm-folder-path-container {
+    @apply flex gap-4;
   }
   .rfm-folder-path-svg {
     @apply w-6;

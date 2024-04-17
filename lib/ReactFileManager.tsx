@@ -5,6 +5,7 @@ import { FileManagerContext } from "./context";
 import { Navbar, Workspace } from "./components";
 // Types
 import type { FileSystemType } from "./types";
+import { ViewStyle } from "./types";
 
 export interface IFileManagerProps {
   fs: FileSystemType;
@@ -27,11 +28,14 @@ export const ReactFileManager = ({
 }: IFileManagerProps) => {
   const [currentFolder, setCurrentFolder] = useState<string>("0"); // Root folder ID must be "0"
   const [uploadedFileData, setUploadedFileData] = useState<any>();
+  const [viewStyle, setViewStyle] = useState<ViewStyle>(ViewStyle.List);
 
   return (
     <FileManagerContext.Provider
       value={{
         fs: fs,
+        viewStyle: viewStyle,
+        setViewStyle: setViewStyle,
         viewOnly: viewOnly,
         currentFolder: currentFolder,
         setCurrentFolder: setCurrentFolder,
