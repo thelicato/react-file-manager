@@ -41,7 +41,7 @@ const columns = [
 ]
 
 const Workspace = () => {
-  const { currentFolder, fs, viewStyle, viewOnly, setCurrentFolder, setUploadedFileData, onDoubleClick } = useFileManager();
+  const { currentFolder, fs, viewStyle, viewOnly, setCurrentFolder, setUploadedFileData, onDoubleClick, onRefresh } = useFileManager();
   const [newFolderModalVisible, setNewFolderModalVisible] =
     useState<boolean>(false);
   const [uploadFileModalVisible, setUploadFileModalVisible] =
@@ -99,6 +99,13 @@ const Workspace = () => {
 
     if (file.isDir) {
       setCurrentFolder(file.id);
+      if (onRefresh !== undefined) {
+        try {
+          await onRefresh(file.id);
+        } catch (e) {
+          throw new Error("Error during refresh");
+        }
+      }
     }
     
   };
