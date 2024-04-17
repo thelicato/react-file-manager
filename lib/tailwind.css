@@ -91,6 +91,21 @@ React File Manager | MIT License | https://github.com/thelicato/react-file-manag
   .rfm-header-icon--selected {
     @apply bg-slate-700 text-white rounded-lg;
   }
+  .rfm-workspace-list-align-txt {
+    @apply text-left last:text-right pr-2;
+  }
+  .rfm-workspace-list-icon-row {
+    @apply cursor-pointer hover:bg-gray-100 active:bg-gray-200 transition-all duration-200;
+  }
+  .rfm-workspace-list-icon-td {
+    @apply flex gap-1 py-2;
+  }
+  .rfm-workspace-list-icon {
+    @apply w-6 h-6;
+  }
+  .rfm-workspace-list-add-folder {
+    @apply w-full p-2 text-slate-100 rounded-lg bg-sky-500 hover:bg-sky-700 transition-all duration-200 cursor-pointer;
+  }
   .rfm-folder-path-container {
     @apply flex gap-4;
   }

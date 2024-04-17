@@ -19,6 +19,7 @@ import {
   getSortedRowModel,
   useReactTable,
 } from '@tanstack/react-table'
+import SvgIcon from "./SvgIcon";
 
 
 const columnHelper = createColumnHelper<FileType>()
@@ -26,7 +27,12 @@ const columnHelper = createColumnHelper<FileType>()
 const columns = [
   columnHelper.accessor('name', {
     header: () => 'Name',
-    cell: info => info.getValue(),
+    cell: info => (
+    <div className="rfm-workspace-list-icon-td">
+      <SvgIcon svgType={info.row.original.isDir ? "folder" : "file"} className="rfm-workspace-list-icon"/>
+      <p>{info.getValue()}</p>
+    </div>
+    ),
   }),
   columnHelper.accessor('lastModified', {
     header: () => 'Last Modified',
@@ -141,7 +147,7 @@ const Workspace = () => {
               {table.getHeaderGroups().map(headerGroup => (
                 <tr key={headerGroup.id}>
                   {headerGroup.headers.map(header => (
-                    <th className="text-left last:text-right" key={header.id} onClick={header.column.getToggleSortingHandler()}>
+                    <th className="rfm-workspace-list-align-txt" key={header.id} onClick={header.column.getToggleSortingHandler()}>
                       {flexRender(header.column.columnDef.header, header.getContext())}
                       {header.column.getIsSorted() ? (header.column.getIsSorted() === 'desc' ? ' 🔽' : ' 🔼') : ''}
                     </th>
@@ -151,9 +157,9 @@ const Workspace = () => {
             </thead>
             <tbody>
               {table.getRowModel().rows.map(row => (
-                <tr key={row.id}>
+                <tr key={row.id} className="rfm-workspace-list-icon-row">
                   {row.getVisibleCells().map(cell => (
-                    <td className="text-left last:text-right" key={cell.id} onClick={() => handleClick(row.original)} onDoubleClick={() => handleDoubleClick(row.original.id)}>
+                    <td className="rfm-workspace-list-align-txt" key={cell.id} onClick={() => handleClick(row.original)} onDoubleClick={() => handleDoubleClick(row.original.id)}>
                       {flexRender(cell.column.columnDef.cell, cell.getContext())}
                     </td>
                   ))}
@@ -162,7 +168,7 @@ const Workspace = () => {
             </tbody>
           </table>
           {!viewOnly && (
-            <button onClick={() => setNewFolderModalVisible(true)}>Add Folder</button>
+            <button className="rfm-workspace-list-add-folder" onClick={() => setNewFolderModalVisible(true)}>Add Folder</button>
           )}
         </>
         )}    
