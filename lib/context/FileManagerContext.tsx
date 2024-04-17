@@ -1,6 +1,6 @@
 import type { Dispatch } from "react";
 import { createContext, useContext } from "react";
-import type { FileSystemType } from "../types";
+import type { FileSystemType, ViewStyle } from "../types";
 
 interface ProviderInterface {
   fs: FileSystemType;
@@ -14,6 +14,8 @@ interface ProviderInterface {
   onDelete?: (fileId: string) => Promise<void>;
   uploadedFileData: any;
   setUploadedFileData: Dispatch<any>;
+  viewStyle: ViewStyle,
+  setViewStyle: Dispatch<ViewStyle>
 }
 
 export const FileManagerContext = createContext<ProviderInterface | null>(null);

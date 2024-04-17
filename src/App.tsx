@@ -2,6 +2,7 @@ import React from "react";
 import type { FileSystemType } from "../lib";
 import { ReactFileManager } from "../lib";
 import "./App.css";
+import "../lib/tailwind.css";
 
 export const dummyFileSystem: FileSystemType = [
   { id: "0", name: "/", path: "/", isDir: true },
@@ -10,6 +11,7 @@ export const dummyFileSystem: FileSystemType = [
     name: "report.pdf",
     isDir: false,
     parentId: "0",
+    lastModified: 1677021347
   },
   {
     id: "31259",
@@ -17,6 +19,7 @@ export const dummyFileSystem: FileSystemType = [
     isDir: true,
     parentId: "0",
     path: "/Documents",
+    lastModified: 1704720512
   },
   {
     id: "31261",
@@ -24,12 +27,14 @@ export const dummyFileSystem: FileSystemType = [
     isDir: true,
     parentId: "31259",
     path: "/Documents/Personal",
+    lastModified: 1686630289
   },
   {
     id: "31260",
     name: "report.docx",
     isDir: false,
     parentId: "0",
+    lastModified: 1679647141
   },
   {
     id: "31267",
