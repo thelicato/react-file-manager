@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import type { FileSystemType } from "../lib";
 import { ReactFileManager } from "../lib";
 import "./App.css";
@@ -51,11 +51,59 @@ export const dummyFileSystem: FileSystemType = [
   },
 ];
 
+enum Theme {
+  Dark = 'dark',
+  Light = 'light',
+}
+
+const getInitialTheme = (): Theme => {
+  if (typeof window !== 'undefined' && window.localStorage) {
+    const storedPrefs = window.localStorage.getItem('color-theme');
+
+    if (typeof storedPrefs === 'string') {
+      return storedPrefs as Theme;
+    }
+
+    const userMedia = window.matchMedia('(prefers-color-scheme: dark)');
+    if (userMedia.matches) {
+      return Theme.Dark;
+    }
+  }
+
+  return Theme.Light; // light theme as the default;
+};
+
+
 function App() {
+  const [theme, setTheme] = React.useState<Theme>(getInitialTheme);
+
+  const rawSetTheme = (rawTheme: Theme) => {
+    const root = window.document.documentElement;
+    const isDark = rawTheme === Theme.Dark;
+
+    root.classList.remove(isDark ? 'light' : 'dark');
+    root.classList.add(rawTheme);
+
+    localStorage.setItem('color-theme', rawTheme);
+  };
+
+  const toggleTheme = () => {
+    const _theme: Theme = theme === Theme.Dark ? Theme.Light : Theme.Dark;
+    setTheme(_theme);
+  };
+
+  useEffect(() => {
+    rawSetTheme(theme);
+  }, [theme]);
+
+
   return (
+    <>
+    <button className="switch-mode-btn" onClick={toggleTheme}>Switch mode</button>
     <div className="container">
       <ReactFileManager fs={dummyFileSystem} />
     </div>
+    </>
   );
 }
 
