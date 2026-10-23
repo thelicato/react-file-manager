@@ -30,7 +30,7 @@ export const dummyFileSystem: FileSystemType = [
     lastModified: 1686630289
   },
   {
-    id: "31260",
+    id: "31268",
     name: "report.docx",
     isDir: false,
     parentId: "0",
@@ -98,12 +98,26 @@ function App() {
 
 
   return (
-    <>
-    <button className="switch-mode-btn" onClick={toggleTheme}>Switch mode</button>
-    <div className="container">
-      <ReactFileManager fs={dummyFileSystem} />
-    </div>
-    </>
+    <main className="demo-shell">
+      <header className="demo-header">
+        <div>
+          <p className="demo-eyebrow">A React component</p>
+          <h1>File manager</h1>
+          <p className="demo-subtitle">Browse and organize your files.</p>
+        </div>
+        <button
+          className="switch-mode-btn"
+          onClick={toggleTheme}
+          aria-label={`Switch to ${theme === Theme.Dark ? "light" : "dark"} mode`}
+        >
+          <span aria-hidden="true">{theme === Theme.Dark ? "☀" : "☾"}</span>
+          {theme === Theme.Dark ? "Light mode" : "Dark mode"}
+        </button>
+      </header>
+      <section className="container" aria-label="File manager demo">
+        <ReactFileManager fs={dummyFileSystem} />
+      </section>
+    </main>
   );
 }
 

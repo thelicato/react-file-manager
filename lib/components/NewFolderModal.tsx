@@ -9,7 +9,7 @@ interface INewFolderModalProps {
 
 const NewFolderModal = (props: INewFolderModalProps) => {
   const { onCreateFolder } = useFileManager();
-  const folderName = useRef<any>();
+  const folderName = useRef<HTMLInputElement>(null);
 
   const onConfirm = async () => {
     if (
@@ -23,10 +23,15 @@ const NewFolderModal = (props: INewFolderModalProps) => {
     }
   };
 
+  const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    void onConfirm();
+  };
+
   return (
     <CommonModal title="Create New Folder" {...props}>
       <div>
-        <form className="rfm-new-folder-modal-form">
+        <form className="rfm-new-folder-modal-form" onSubmit={onSubmit}>
           <div>
             <input
               ref={folderName}
@@ -37,13 +42,6 @@ const NewFolderModal = (props: INewFolderModalProps) => {
             />
           </div>
           <button
-            onClick={onConfirm}
-            disabled={
-              folderName &&
-              folderName.current &&
-              folderName.current.value &&
-              folderName.current.value.length === 0
-            }
             type="submit"
             className="rfm-new-folder-modal-btn"
           >

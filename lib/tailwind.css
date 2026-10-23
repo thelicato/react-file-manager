@@ -294,3 +294,449 @@ React File Manager | MIT License | https://github.com/thelicato/react-file-manag
     @apply flex box-border h-full;
   }
 }
+
+/* Refined defaults for the file manager surface. */
+.rfm-main-container {
+  min-width: 0;
+  overflow: hidden;
+  border-radius: inherit;
+  color: #1e293b;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 0.875rem;
+}
+
+.rfm-navbar {
+  flex: 0 0 210px;
+  width: 210px;
+  padding: 22px 12px;
+  border-right: 1px solid #e2e8f0;
+  background: #f8fafc;
+}
+
+.rfm-navbar-root-link {
+  display: block;
+  padding: 8px 11px;
+  border-radius: 9px;
+  color: #334155;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+}
+
+.rfm-navbar-list {
+  margin-top: 14px;
+}
+
+.rfm-navbar-list-element {
+  overflow: hidden;
+  border-radius: 8px;
+  color: #475569;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rfm-navbar-root-link:focus-visible,
+.rfm-navbar-list-element:focus-visible,
+.rfm-header-icon:focus-visible,
+.rfm-file-icon-container:focus-visible,
+.rfm-folder-icon-container:focus-visible,
+.rfm-workspace-list-icon-row:focus-visible,
+.rfm-workspace-list-add-folder:focus-visible {
+  outline: 3px solid rgb(14 165 233 / 40%);
+  outline-offset: 2px;
+}
+
+.rfm-workspace {
+  min-width: 0;
+  min-height: 0;
+  gap: 22px;
+  overflow: auto;
+  padding: 24px;
+}
+
+.rfm-workspace-header {
+  min-height: 40px;
+  height: auto;
+  align-items: center;
+  gap: 16px;
+}
+
+.rfm-folder-path-container {
+  min-width: 0;
+  align-items: center;
+  gap: 10px;
+  color: #64748b;
+  font-size: 0.875rem;
+}
+
+.rfm-folder-path-span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rfm-folder-path-span b {
+  color: #1e293b;
+  font-weight: 650;
+}
+
+.rfm-folder-path-svg {
+  flex: 0 0 30px;
+  width: 30px;
+  height: 30px;
+  padding: 7px;
+  color: #475569;
+  background: #eef2f7;
+}
+
+.rfm-folder-path-svg:hover {
+  color: #0f172a;
+  background: #e2e8f0;
+}
+
+.rfm-header-container {
+  flex: 0 0 auto;
+  gap: 3px;
+  padding: 3px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: #f8fafc;
+}
+
+.rfm-header-icon {
+  width: 30px;
+  height: 30px;
+  padding: 6px;
+  border-radius: 7px;
+  color: #64748b;
+}
+
+.rfm-header-icon:hover {
+  background: #e9eef5;
+  color: #334155;
+}
+
+.rfm-header-icon--selected {
+  background: #0f766e;
+  color: #fff;
+}
+
+.rfm-header-icon--selected:hover {
+  background: #0f766e;
+  color: #fff;
+}
+
+.rfm-workspace-file-listing {
+  align-content: flex-start;
+  gap: 12px;
+}
+
+.rfm-workspace-file-listing > table {
+  border-collapse: separate;
+  border-spacing: 0;
+  color: #334155;
+  font-size: 0.875rem;
+}
+
+.rfm-workspace-list-th {
+  padding: 0 12px 10px;
+  border-bottom: 1px solid #e2e8f0;
+  color: #64748b;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.rfm-workspace-list-th-content {
+  align-items: center;
+  gap: 6px;
+}
+
+.rfm-workspace-list-align-txt {
+  padding: 0 12px;
+  border-bottom: 1px solid #f1f5f9;
+  color: #475569;
+}
+
+.rfm-workspace-list-icon-row {
+  background: transparent;
+}
+
+.rfm-workspace-list-icon-row:hover {
+  background: #f8fafc;
+}
+
+.rfm-workspace-list-icon-td {
+  min-height: 46px;
+  align-items: center;
+  gap: 10px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  color: #1e293b;
+}
+
+.rfm-workspace-list-icon-td p {
+  margin: 0;
+}
+
+.rfm-workspace-list-icon {
+  flex: 0 0 21px;
+  width: 21px;
+  height: 21px;
+}
+
+.rfm-workspace-list-add-folder {
+  width: auto;
+  min-height: 38px;
+  padding: 0 14px;
+  border: 1px solid #b9e4df;
+  background: #ecfdf9;
+  color: #0f766e;
+  font-weight: 650;
+}
+
+.rfm-workspace-list-add-folder:hover {
+  background: #d8f5ee;
+}
+
+.rfm-file-icon-container {
+  position: relative;
+  width: 126px;
+  min-height: 132px;
+  border: 1px solid transparent;
+  background: transparent;
+}
+
+.rfm-file-entry-button {
+  display: block;
+  padding: 0;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.rfm-file-entry-button:focus-visible {
+  outline: 3px solid rgb(14 165 233 / 40%);
+  outline-offset: 2px;
+}
+
+.rfm-file-icon-container:hover {
+  border-color: #dbeafe;
+  background: #f8fbff;
+}
+
+.rfm-file-icon-svg {
+  width: 72px;
+  height: 72px;
+}
+
+.rfm-file-icon-name {
+  width: 100%;
+  color: #334155;
+  font-size: 0.8rem;
+}
+
+.rfm-file-icon-extension {
+  top: 34px;
+  color: #334155;
+  font-size: 0.65rem;
+  font-weight: 700;
+}
+
+.rfm-folder-icon-container {
+  width: 126px;
+  height: 132px;
+  margin: 0;
+  border-width: 1px;
+  border-color: #cbd5e1;
+  transition: background-color 160ms ease, border-color 160ms ease;
+}
+
+.rfm-folder-icon-container:hover {
+  border-color: #0f766e;
+  background: #f0fdfa;
+}
+
+.rfm-folder-icon-span {
+  color: #0f766e;
+}
+
+.rfm-modal-container {
+  max-width: min(420px, calc(100% - 24px));
+  padding: 28px;
+  border-color: #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 24px 70px rgb(15 23 42 / 22%);
+  cursor: default;
+}
+
+.rfm-modal-title {
+  padding-right: 24px;
+  color: #1e293b;
+  font-size: 1.125rem;
+}
+
+.rfm-modal-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.rfm-new-folder-modal-form {
+  gap: 18px;
+}
+
+.rfm-new-folder-modal-input {
+  min-height: 42px;
+  border-color: #cbd5e1;
+  border-radius: 9px;
+  background: #fff;
+}
+
+.rfm-new-folder-modal-input:focus {
+  border-color: #0f766e;
+  outline: 3px solid rgb(15 118 110 / 16%);
+}
+
+.rfm-new-folder-modal-btn {
+  border-radius: 9px;
+  background: #0f766e;
+}
+
+.rfm-new-folder-modal-btn:hover {
+  background: #115e59;
+}
+
+.dark .rfm-main-container {
+  color: #e2e8f0;
+}
+
+.dark .rfm-navbar {
+  border-color: #273449;
+  background: #111827;
+}
+
+.dark .rfm-navbar-root-link,
+.dark .rfm-navbar-list-element {
+  color: #cbd5e1;
+}
+
+.dark .rfm-workspace {
+  background: #172033;
+}
+
+.dark .rfm-folder-path-container,
+.dark .rfm-workspace-file-listing > table {
+  color: #cbd5e1;
+}
+
+.dark .rfm-folder-path-span b,
+.dark .rfm-workspace-list-icon-td {
+  color: #e2e8f0;
+}
+
+.dark .rfm-folder-path-svg {
+  color: #cbd5e1;
+  background: #334155;
+}
+
+.dark .rfm-header-container {
+  border-color: #334155;
+  background: #1e293b;
+}
+
+.dark .rfm-header-icon {
+  color: #cbd5e1;
+}
+
+.dark .rfm-header-icon:hover {
+  background: #334155;
+}
+
+.dark .rfm-header-icon--selected,
+.dark .rfm-header-icon--selected:hover {
+  background: #0f766e;
+  color: #fff;
+}
+
+.dark .rfm-workspace-list-th {
+  border-color: #334155;
+  color: #94a3b8;
+}
+
+.dark .rfm-workspace-list-align-txt {
+  border-color: #273449;
+  color: #cbd5e1;
+}
+
+.dark .rfm-workspace-list-icon-row:hover {
+  background: #1e293b;
+}
+
+.dark .rfm-file-icon-name {
+  color: #e2e8f0;
+}
+
+.dark .rfm-file-icon-container:hover,
+.dark .rfm-folder-icon-container:hover {
+  border-color: #0f766e;
+  background: #1b3838;
+}
+
+.dark .rfm-modal-container {
+  border-color: #334155;
+  background: #1e293b;
+}
+
+.dark .rfm-modal-title {
+  color: #e2e8f0;
+}
+
+.dark .rfm-new-folder-modal-input {
+  border-color: #475569;
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+@media (max-width: 640px) {
+  .rfm-navbar {
+    flex-basis: 126px;
+    width: 126px;
+    padding: 16px 8px;
+  }
+
+  .rfm-navbar-root-link,
+  .rfm-navbar-list-element {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+
+  .rfm-workspace {
+    gap: 16px;
+    padding: 16px 12px;
+  }
+
+  .rfm-workspace-header {
+    gap: 8px;
+  }
+
+  .rfm-workspace-file-listing > table {
+    font-size: 0.75rem;
+  }
+
+  .rfm-workspace-list-align-txt {
+    padding-right: 6px;
+    padding-left: 6px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rfm-main-container *,
+  .rfm-main-container *::before,
+  .rfm-main-container *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
