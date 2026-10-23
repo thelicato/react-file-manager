@@ -2,9 +2,9 @@
 React File Manager | MIT License | https://github.com/thelicato/react-file-manager
 */
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@config "../tailwind.config.cjs";
+@custom-variant dark (&:where(.dark, .dark *));
 
 @layer utilities {
   /* CommonModal */
@@ -97,7 +97,7 @@ React File Manager | MIT License | https://github.com/thelicato/react-file-manag
     @apply text-left last:text-right pr-2;
   }
   .rfm-workspace-list-th {
-    @apply rfm-workspace-list-align-txt last:justify-end last:flex;
+    @apply text-left last:text-right pr-2 last:justify-end last:flex;
   }
   .rfm-workspace-list-th-content {
     @apply flex;
