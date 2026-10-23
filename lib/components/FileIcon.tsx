@@ -34,7 +34,7 @@ const FileIcon = (props: IFileIcon) => {
 
     const nameArray = props.name.split(".");
     return `.${nameArray[nameArray.length - 1]}`;
-  }, [props.id]);
+  }, [props.name]);
 
   return (
     <>

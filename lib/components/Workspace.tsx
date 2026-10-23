@@ -133,9 +133,15 @@ const Workspace = () => {
         {/* Icons File View */}
         {viewStyle === ViewStyle.Icons && (
           <>
-          {currentFolderFiles.map((f: FileType, key: number) => {
+          {currentFolderFiles.map((f: FileType) => {
             return (
-              <button onDoubleClick={() => handleDoubleClick(f.id)} key={key}>
+              <button
+                type="button"
+                className="rfm-file-entry-button"
+                aria-label={`Open ${f.isDir ? "folder" : "file"} ${f.name}`}
+                onDoubleClick={() => handleDoubleClick(f.id)}
+                key={f.id}
+              >
                 <FileIcon id={f.id} name={f.name} isDir={f.isDir}/>
               </button>
             )}
