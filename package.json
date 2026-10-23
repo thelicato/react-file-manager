@@ -72,6 +72,10 @@
     "vite-plugin-dts": "^1.7.1",
     "vitest": "^5.0.5"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thelicato/react-file-manager"
+  },
   "bugs": {
     "url": "https://github.com/thelicato/react-file-manager/issues"
   },
