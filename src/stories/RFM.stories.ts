@@ -1,5 +1,4 @@
-import { Meta } from "@storybook/react";
-import type { StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { ReactFileManager } from "../../lib";
 // Dummy data
 import { dummyFileSystem } from "../App";
