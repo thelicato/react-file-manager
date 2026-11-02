@@ -96,6 +96,17 @@ export default App;
 
 This example provide a dummy filesystem, of course you can also map a real file system as long as you create an array of ``FileSystemType``.
 
+## Development
+
+Use Node.js 24 and install the locked dependencies with `npm ci`. Run
+`npm run lint`, `npm test`, `npm run build`, and `npm run build-storybook`
+to check changes. Run `npm audit` to check both runtime and development dependencies.
+
+The `minimatch` and `glob` overrides keep development tools on patched versions
+until upstream packages update their dependency ranges. The release-age exceptions
+in `.npmrc` allow these security fixes, Vite's security patch, and their required
+dependencies to install even when npm has a minimum release age configured.
+
 ## License
 
 [MIT](./LICENSE) License © [Angelo Delicato](https://github.com/thelicato)
